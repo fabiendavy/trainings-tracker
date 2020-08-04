@@ -1,0 +1,23 @@
+.add-activity-input {
+  border-radius: 8px;
+  border: 1px solid rgb(228, 228, 228);
+  color: black;
+  &:focus {
+    color: black;
+  }
+  &::placeholder {
+    color: rgb(168, 168, 168);
+  }
+}
+
+.submit-btn {
+  
+}
+
+.activity-btn {
+  
+}
+
+form#new_training {
+  display: none;
+}
