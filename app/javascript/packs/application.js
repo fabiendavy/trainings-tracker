@@ -32,10 +32,11 @@ application.load(definitionsFromContext(context))
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// Internal imports
+import { initFlatPickr } from '../plugins/initFlatPickr';
+import { helpAutocompleteTime } from '../lib/helpAutocompleteTime';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  initFlatPickr();
+  helpAutocompleteTime();
 });

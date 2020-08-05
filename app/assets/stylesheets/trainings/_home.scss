@@ -10,14 +10,60 @@
   }
 }
 
+.cancel-btn {
+  border: 2px solid black;
+  padding: 4px 8px;
+  display: inline-block;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .submit-btn {
-  
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  background-color: salmon;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: #da7166;
+  }
 }
 
 .activity-btn {
-  
+  margin: 16px;
+  border: none;
+  background-color: skyblue;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: #79b7cf;
+  } 
+}
+
+.activity {
+  margin: 16px 0;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.activity-swim {
+  background-color: #8791ec;
+}
+.activity-bike {
+  background-color: #bebebe
+}
+.activity-run {
+  background-color: #ffa2a2;
+}
+.activity-gym {
+  background-color: rgb(220, 145, 255);
 }
 
 form#new_training {
   display: none;
+  margin: 30px;
 }
