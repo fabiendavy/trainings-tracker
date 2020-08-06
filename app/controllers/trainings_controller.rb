@@ -1,7 +1,12 @@
 class TrainingsController < ApplicationController
-  def index
+
+  def dashboard
     @training = Training.new
     @trainings = current_user.trainings.order(date: :desc).first(5)
+    @time_week = CurrentCalculator::CurrentWeekTime.call(current_user, Date.today)
+  end
+
+  def index
   end
 
   def create
