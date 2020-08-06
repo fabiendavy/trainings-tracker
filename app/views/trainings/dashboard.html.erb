@@ -1,18 +1,20 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-12 main">
 
-      <div data-controller="trainings" class="card-item">
-        <button class="activity-btn" data-action="click->trainings#displayForm" data-target="trainings.addBtn">Add an activity</button>
-        <%= render '/shared/trainings/form' %>
-      </div>
+      <div class="column">
+        <div data-controller="trainings" class="card-item">
+          <button class="activity-btn" data-action="click->trainings#displayForm" data-target="trainings.addBtn">Add an activity</button>
+          <%= render '/shared/trainings/form' %>
+        </div>
 
-      <div id="trainings" class="card-item">
-        <h3>Latest activities</h3>
-        <% @trainings.each do |training| %>
-          <%= render partial: '/shared/trainings/training', locals: { training: training } %>
-        <% end %>
-        <%= link_to "See all", trainings_path %>
+        <div id="trainings" class="card-item">
+          <h3>Latest activities</h3>
+          <% @trainings.each do |training| %>
+            <%= render partial: '/shared/trainings/training', locals: { training: training } %>
+          <% end %>
+          <%= link_to "See all", trainings_path %>
+        </div>
       </div>
 
       <div class="card-item">
@@ -22,14 +24,11 @@
         </div>
 
         <div id="current-week" class="current-tabs">
-          <%= render partial: '/shared/trainings/current_week', locals: { time_week: @time_week} %>
+          <%= render partial: '/shared/trainings/current_week' %>
         </div>
 
         <div id="current-month" class="current-tabs">
-          <div class="table">
-            <h5>Current Month</h5>
-            <p>summary of the current month</p>
-          </div>
+          <%= render partial: '/shared/trainings/current_month' %>
         </div>
       </div>
       

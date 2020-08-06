@@ -1,1 +1,20 @@
-<p>index.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <% @trainings.each do |training| %>
+        <div class="activity activity-<%= training.sport.downcase %> d-flex justify-content-between">
+          <div class="elements">
+            <%= training.sport %> - 
+            <%= training.date.strftime('%A %e %B %Y') %> -
+            <%= training.distance %>km - 
+            <%= training.time %>
+            <%= "- #{training.ascending_elevation}m" if training.ascending_elevation %>
+          </div>
+          <div class="delete">
+            <%= link_to '𐄂', training_path(training), method: :delete, data: { confirm: 'Do you really want to delete this activity?' }, class: 'remove-activity', remote: true %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,8 @@ module Convertor
   class ConvertSecondsInString
     def self.call(seconds)
       if seconds <= 59
-        return "00:00:#{seconds}"
+        final_seconds = seconds < 10 ? "0#{seconds}" : "#{seconds}"
+        return "00:00:#{final_seconds}"
       elsif seconds > 59 && seconds <= 3599
         minutes = seconds / 60
         final_seconds = seconds % 60

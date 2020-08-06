@@ -2,7 +2,7 @@
   <span data-action="click->trainings#hideForm" data-target="trainigns.hideBtn" class="cancel-btn">Cancel</span>
   <%= f.input :sport, collection: Training::SPORTS, input_html: { class: 'add-activity-input' } %>
   <%= f.input :date, html5: true, input_html: { class: 'add-activity-input' } %>
-  <%= f.input :distance, placeholder: 'kms', input_html: { class: 'add-activity-input', min: 0 } %>
+  <%= f.input :distance, placeholder: 'kms', input_html: { class: 'add-activity-input', min: 0 }, hint: 'Enter 0 for the gym' %>
   <%= f.input :time, placeholder: 'hh:mm:ss', input_html: { class: 'add-activity-input' } %>
   <%= f.input :ascending_elevation, input_html: { class: 'add-activity-input' }, placeholder: 'meters' %>
   <%= f.submit class: 'submit-btn w-100' %>

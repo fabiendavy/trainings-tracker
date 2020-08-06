@@ -7,4 +7,9 @@ class Training < ApplicationRecord
   validates :date, presence: true
   validates :distance, presence: true
   validates :time, presence: true, format: { with: /\A(\d{2})\:([0-5][0-9])\:([0-5][0-9])\z/ }
+
+  def incorrect_swim_unit?
+    return true if sport == 'Swim' && /(\d{3,})/.match(distance.to_s)
+    return false
+  end
 end

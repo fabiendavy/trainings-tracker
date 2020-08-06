@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   root to: redirect('/dashboard')
   get '/dashboard', to: "trainings#dashboard"
   
-  resources :trainings, only: [:index, :create]
+  resources :trainings, only: [:index, :create, :destroy]
 end

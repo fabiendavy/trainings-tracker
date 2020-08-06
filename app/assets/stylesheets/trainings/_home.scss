@@ -1,4 +1,18 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.column {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
 .card-item {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
   padding: 24px;
   margin: 16px 0;
   background-color: white;
@@ -55,6 +69,20 @@
   }
 }
 
+.delete {
+  margin: 0;
+  padding: 0;
+  .remove-activity {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      color: #242424;
+      text-decoration: none;
+    }
+  }
+}
+
 .activity {
   margin: 16px 0;
   padding: 16px;
@@ -84,17 +112,15 @@ form#new_training {
     background-color: #bab3e9;
     padding: 24px 8px;
     border-radius: 0 0 16px 16px;
-    table {
-      width: 100%;
-      border: 1px solid black;
-      th, td {
-        padding: 8px;
-        text-align: center;
-        border: 1px solid black;
-      }
-      thead tr th:first-child {
-        background-color: grey;
-      }
+    .table-head-item {
+      font-weight: bold;
+    }
+    .table-head-item, .table-body-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      height: 50px;
     }
   }
 }
