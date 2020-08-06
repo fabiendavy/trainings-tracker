@@ -60,10 +60,42 @@
   background-color: #ffa2a2;
 }
 .activity-gym {
-  background-color: rgb(220, 145, 255);
+  background-color: #dc91ff;
 }
 
 form#new_training {
   display: none;
   margin: 30px;
+}
+
+#current-week-month {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  button {
+    padding: 8px;
+    border: none;
+    background-color: #e6e6e6;
+    color: black;
+    width: 50%;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: #d6d6d6;
+    }
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+  .active-tab {
+    border-bottom: 5px solid grey;
+  }
+}
+
+#current-month {
+  display: none;
 }

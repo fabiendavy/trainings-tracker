@@ -10,14 +10,23 @@
       <div id="trainings">
         <h3>Latest activities</h3>
         <% @trainings.each do |training| %>
-          <div class="activity activity-<%= training.sport.downcase %>">
-            <%= training.sport %> - 
-            <%= training.date.strftime('%A %e %B %Y') %> <br>
-            <%= training.distance %>km - 
-            <%= training.time %>
-            <%= "- #{training.ascending_elevation}m" if training.ascending_elevation %>
-          </div>
+          <%= render partial: '/shared/trainings/training', locals: { training: training } %>
         <% end %>
+      </div>
+
+      <div id="current-week-month">
+        <button class='active-tab'>Current Week</button>
+        <button>Current Month</button>
+      </div>
+
+      <div id="current-week" class="current-tabs">
+        <h5>Current Week</h5>
+        <p>summury of the current week</p>
+      </div>
+
+      <div id="current-month" class="current-tabs">
+        <h5>Current Month</h5>
+        <p>summury of the current month</p>
       </div>
     </div>
   </div>

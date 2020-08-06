@@ -1,0 +1,7 @@
+<div class="activity activity-<%= training.sport.downcase %>">
+  <%= training.sport %> - 
+  <%= training.date.strftime('%A %e %B %Y') %> <br>
+  <%= training.distance %>km - 
+  <%= training.time %>
+  <%= "- #{training.ascending_elevation}m" if training.ascending_elevation %>
+</div>

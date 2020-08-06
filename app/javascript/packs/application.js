@@ -35,8 +35,9 @@ import "bootstrap";
 // Internal imports
 import { initFlatPickr } from '../plugins/initFlatPickr';
 import { helpAutocompleteTime } from '../lib/helpAutocompleteTime';
+import { tabCurrentData } from '../lib/tabCurrentData';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatPickr();
-  helpAutocompleteTime();
+  tabCurrentData();
 });
