@@ -12,4 +12,8 @@ class Training < ApplicationRecord
     return true if sport == 'Swim' && /(\d{3,})/.match(distance.to_s)
     return false
   end
+
+  def convert_swim_meters_in_kms
+    distance.fdiv(1000)
+  end
 end

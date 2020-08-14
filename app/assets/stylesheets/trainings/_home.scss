@@ -1,18 +1,26 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: repeat(8, 1fr);
   grid-gap: 20px;
 }
 
 .column {
   grid-column: 1 / 2;
-  grid-row: 1 / 3;
+  grid-row: 1 / 6;
+}
+
+.current {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+}
+
+.monthly-activities {
+  grid-column: 1 / 3;
+  grid-row: 6 / 9;
 }
 
 .card-item {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
   padding: 24px;
   margin: 16px 0;
   background-color: white;

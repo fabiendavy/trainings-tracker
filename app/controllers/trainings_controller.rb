@@ -2,7 +2,7 @@ class TrainingsController < ApplicationController
 
   def dashboard
     @training = Training.new
-    @trainings = current_user.trainings.order(date: :desc).first(5)
+    @trainings = current_user.trainings.order(date: :desc).first(6)
 
     @data_week = CurrentCalculator::Current.call(current_user, Date.today.beginning_of_week)
     @data_month = CurrentCalculator::Current.call(current_user, Date.today.beginning_of_month)
@@ -16,15 +16,12 @@ class TrainingsController < ApplicationController
     @training = Training.new(training_params)
     @training.user = current_user
 
+    @training.distance = @training.convert_swim_meters_in_kms if @training.incorrect_swim_unit?
+
     if @training.save
-      if @training.incorrect_swim_unit?
-        @training.destroy
-        redirect_to dashboard_path(error_swim_unit: true)
-      else
-        redirect_to dashboard_path
-      end
+      redirect_to dashboard_path
     else
-      @trainings = current_user.trainings.order(date: :desc).first(5)
+      @trainings = current_user.trainings.order(date: :desc).first(6)
       flash[:alert] = "Training not saved."
       render :index
     end
